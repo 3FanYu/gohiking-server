@@ -19,7 +19,7 @@ class TrailsTableSeeder extends Seeder
         $datas=[
             [
                 'title' => '東眼山自導式步道',
-                'location_id' => 3,
+                'location_id' => 21,
                 'distance' => 4000,
                 'coverImage' => 'https://i.imgur.com/c0NFa4Q.jpg',
                 'difficulty' => 3,
@@ -28,7 +28,7 @@ class TrailsTableSeeder extends Seeder
             ],
             [
                 'title' => '巴陵古道',
-                'location_id' => 2,
+                'location_id' => 11,
                 'distance' => 1500,
                 'coverImage' => 'https://i.imgur.com/vLdAblX.jpg',
                 'difficulty' => 1,
@@ -37,7 +37,7 @@ class TrailsTableSeeder extends Seeder
             ],
             [
                 'title' => '嘎拉賀野溪溫泉步道',
-                'location_id' => 3,
+                'location_id' => 21,
                 'distance' => 1600,
                 'coverImage' => 'https://i.imgur.com/QesUZAo.jpg',
                 'difficulty' => 2,
@@ -46,7 +46,7 @@ class TrailsTableSeeder extends Seeder
             ],
             [
                 'title' => '消波塊步道',
-                'location_id' => 7,
+                'location_id' => 61,
                 'distance' => 2000,
                 'coverImage' => 'https://i.imgur.com/ccmgvp4.jpg',
                 'difficulty' => 5,
@@ -55,7 +55,7 @@ class TrailsTableSeeder extends Seeder
             ],
             [
                 'title' => '新鮮空氣步道',
-                'location_id' => 8,
+                'location_id' => 71,
                 'distance' => 5000,
                 'coverImage' => 'https://i.imgur.com/blCuKOt.jpg',
                 'difficulty' => 5,
@@ -64,14 +64,13 @@ class TrailsTableSeeder extends Seeder
             ],
             [
                 'title' => '慶記步道',
-                'location_id' => 5,
+                'location_id' => 41,
                 'distance' => 1000,
                 'coverImage' => 'https://i.imgur.com/lyUntWJ.jpg',
                 'difficulty' => 5,
                 'evaluation' => 5, 
                 'altitude' => 1000,    
             ],
-            
         ];
         foreach ($datas as $data){
             $trail=new Trail();
