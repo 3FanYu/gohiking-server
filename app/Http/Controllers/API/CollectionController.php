@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Collection;
+use App\Models\County;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class CollectionController extends Controller
@@ -38,7 +40,15 @@ class CollectionController extends Controller
      */
     public function show($id)
     {
-        $result=Collection::with('trails')->find($id);
+        $result=Collection::with('trails')->select('id','name','subTitle','iconImage')->find($id);
+        //將location.name 及 county.name 接在一起
+        foreach($result['trails'] as $trail){
+            $location=Location::where('id',$trail['location_id'])->first();
+            $county_id=$location['county_id'];
+            $county=County::where('id',$county_id)->first();
+            $trail['location']=$county['name'].$location['name'];
+            $trail=$trail->makeHidden(['location_id','difficulty','evaluation','altitude','created_at','updated_at','pivot']);
+        }
         return $result;
     }
 
