@@ -20,15 +20,21 @@ pipeline {
             }
         }
         stage('Composer Update'){
-            sh 'composer update'
+            steps{
+                sh 'composer update'
+            }
         }
         stage('Setup'){
-            sh 'composer update'
-            sh 'cp .env.example .env'
-            sh 'cp .env.example .env'
+            steps{
+                sh 'composer update'
+                sh 'cp .env.example .env'
+                sh 'cp .env.example .env'
+            }
         }
         stage('Test'){
-            sh 'cp .env.example .env'
+            steps{
+                sh 'cp .env.example .env'
+            }
         }
     }
 }
