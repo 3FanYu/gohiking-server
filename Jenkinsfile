@@ -19,15 +19,9 @@ pipeline {
                sh 'ls -a'
             }
         }
-        stage('Composer Update'){
+        stage('Build'){
             steps{
                 sh 'composer update'
-            }
-        }
-        stage('Setup'){
-            steps{
-                sh 'composer update'
-                sh 'cp .env.example .env'
                 sh 'cp .env.example .env'
             }
         }
