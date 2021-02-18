@@ -10,7 +10,7 @@ pipeline {
           stage('Check Env') {
             steps {
                 sh 'php --version'
-                sh'composer --version'
+                sh 'composer --version'
             }
         }
          stage('Check Repo') {
@@ -18,6 +18,17 @@ pipeline {
                git url:'https://github.com/monosparta/gohiking-server.git',branch:'main'
                sh 'ls -a'
             }
+        }
+        stage('Composer Update'){
+            sh 'composer update'
+        }
+        stage('Setup'){
+            sh 'composer update'
+            sh 'cp .env.example .env'
+            sh 'cp .env.example .env'
+        }
+        stage('Test'){
+            sh 'cp .env.example .env'
         }
     }
 }
