@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Make Zip Artifacts') {
             steps {
-                zip zipFile: 'gohiking-server.zip', overwrite: false
+                zip zipFile: 'gohiking-server.zip', overwrite: true
             }
         }
     }
